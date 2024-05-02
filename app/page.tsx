@@ -7,6 +7,8 @@ import ProductList from "./components/product-list";
 import { Button } from "./components/ui/button";
 import { ChevronRightIcon } from "lucide-react";
 import { db } from "./lib/prisma";
+import PromoBanner from "./components/promo-banner";
+import RestaurantList from "./components/restaurant-list";
 
 const Home = async() => {
   const products = await db.product.findMany({
@@ -34,14 +36,10 @@ const Home = async() => {
         <CategoryList />
       </div>
       <div className="p-6">
-        <Image className="h-auto w-full object-contain" 
-        src="/promo-banner-01.png" 
-        alt="promo banner"
-         width={0} 
-         height={0} 
-         sizes="100vw"
-         quality={100}
-         />
+       <PromoBanner 
+          src="/promo-banner-01.png" 
+          alt="promo banner"
+       />
       </div>
       <div className="px-6 flex justify-between">
         <h2 className="font-semibold">Pedidos Recomendados</h2>
@@ -50,7 +48,23 @@ const Home = async() => {
           <ChevronRightIcon size={16} />
           </Button>
       </div>
-      <ProductList products={products} />
+      <div>
+        <ProductList products={products} />
+      </div>
+      <div className="p-6">
+        <PromoBanner 
+           src="/promo-banner-02.png" 
+           alt="promo banner"
+        />
+      </div>
+      <div className="px-6 flex justify-between">
+        <h2 className="font-semibold">Restaurantes Recomendados</h2>
+        <Button variant="ghost" className="text-[#EA1D2C] p-0">
+          Ver todos
+          <ChevronRightIcon size={16} />
+          </Button>
+      </div>
+      <RestaurantList />
     </>
    );
 }
