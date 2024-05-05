@@ -2,7 +2,7 @@
 import { SearchIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import React, { useState } from "react";
+import React, { FormEventHandler, useState } from "react";
 import { useRouter } from "next/navigation";
 
 const Search = () => {
