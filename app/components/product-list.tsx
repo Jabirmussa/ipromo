@@ -24,16 +24,3 @@ const ProductList = async({ products }: ProductListProps) => {
 }
  
 export default ProductList;
-
-
-// const ProductList = async ({ products }: ProductListProps) => {
-//   return (
-//     <div className="flex gap-4 overflow-x-scroll px-5 [&::-webkit-scrollbar]:hidden">
-//       {products.map((product) => (
-//         <ProductItem key={product.id} product={product} />
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default ProductList;

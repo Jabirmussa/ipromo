@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 "use client";
 
 import { Restaurant } from "@prisma/client";
@@ -34,11 +35,12 @@ const Restaurants = () => {
         <h2 className="mb-6 text-lg font-semibold">Restaurantes Encontrados</h2>
         <div className="flex w-full flex-col gap-6">
           {restaurants.map((restaurant) => (
-            <RestaurantItem
-              key={restaurant.id}
-              restaurant={restaurant}
-              className="min-w-full max-w-full"
-            />
+            <div className="min-w-full max-w-full">
+              <RestaurantItem
+                key={restaurant.id}
+                restaurant={restaurant}
+              />
+            </div>
           ))}
         </div>
       </div>

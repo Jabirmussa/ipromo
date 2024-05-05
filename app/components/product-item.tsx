@@ -17,13 +17,14 @@ interface ProductItemProps {
       };
     };
   }>;
+  className?: string;
 }
 
 const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <Link  href={`/products/${product.id}`} className="w-[150px] min-w-[150px]">
-      <div className="w-[150px] min-w-[150px] space-y-2">
-      <div className="relative h-[150px] w-full">
+      <div className=" space-y-2">
+      <div className="relative aspect-square w-full">
         <Image
           src={product.imageUrl}
           alt={product.name}

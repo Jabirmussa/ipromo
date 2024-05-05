@@ -14,11 +14,14 @@ const RecommendedRestaurants = async () => {
         </h2>
         <div className="flex w-full flex-col gap-6">
           {restaurants.map((restaurant) => (
-            <RestaurantItem
-              key={restaurant.id}
-              restaurant={restaurant}
-              className="min-w-full max-w-full"
-            />
+            // eslint-disable-next-line react/jsx-key
+            <div className="min-w-full max-w-full">
+              <RestaurantItem
+                key={restaurant.id}
+                restaurant={restaurant}
+                className="min-w-full max-w-full"
+              />
+            </div>
           ))}
         </div>
       </div>

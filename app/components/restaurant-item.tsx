@@ -11,13 +11,13 @@ interface RestaurantItemProps {
   className?: string;
 }
 
-const RestaurantItem = ({ restaurant }: RestaurantItemProps) => {
+const RestaurantItem = ({ restaurant, className }: RestaurantItemProps) => {
   return (
     <Link
-    className={cn("min-w-[266px] max-w-[266px]")}
+    className={cn("", className)}
     href={`/restaurants/${restaurant.id}`}
-  >
-    <div className="min-w-[266px] max-w-[266px] space-y-3">
+   >
+    <div >
       {/* IMAGEM */}
       <div className="relative h-[136px] w-full">
         <Image
